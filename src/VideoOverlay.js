@@ -13,7 +13,7 @@ type Props = {
   bounds: LatLngBounds,
   opacity?: number,
   play?: boolean,
-  url: string | string[] | HTMLVideoElement,
+  url: string | string[],
   zIndex?: number,
 } & MapLayerProps
 
@@ -26,7 +26,6 @@ export default class VideoOverlay extends MapLayer<LeafletElement, Props> {
     url: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.string),
-      PropTypes.instanceOf(HTMLVideoElement),
     ]).isRequired,
     zIndex: PropTypes.number,
   }
